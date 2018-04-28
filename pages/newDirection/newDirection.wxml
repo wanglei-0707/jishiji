@@ -1,0 +1,16 @@
+<button class="add-btn" bindtap="bindAddFirsttap">{{addFirst ? "取消" : "新增一级类别"}}</button>
+<form bindsubmit="bindSubmit">
+  <view class="form-wrapper">
+    <picker-view wx:if="{{!addFirst}}" name="firstCategory" class="picker-view" indicator-class="picker-view-indicator" value="{{value}}" bindchange="bindPickerChange">
+      <picker-view-column>
+        <view class="picker-view-column-view" wx:for="{{directionFirst}}" wx:key="{{index}}">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <view wx:else class="first-input-wrapper">
+      <input class="input" name="newFirstCategory" value="{{firstCategory}}" placeholder="请输入一级类别" />
+    </view>
+    <input class="input second-input" name="newSecondCategory" value="{{secondCategory}}" placeholder="请输入二级类别" /> 
+  </view>
+  <view class="error-msg" wx:if="{{error.show}}">{{error.msg}}</view>  
+  <button class="submit-btn" type="primary" form-type="submit">添加</button>
+</form>

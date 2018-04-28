@@ -1,0 +1,45 @@
+<view>
+  <view class="filter-bar">
+    <form>
+      <view class="view-group">
+        <view class="view-label">起始日期：</view>
+        <picker class="view-value" name="startDate" mode="date" value="{{startDate}}" end="{{endDate}}" bindchange="bindStartDateChange">{{startDate}}</picker>
+      </view>
+      <view class="view-group">
+        <view class="view-label">终止日期：</view>
+        <picker class="view-value" name="endDate" mode="date" value="{{endDate}}" start="{{startDate}}" end="{{endDay}}" bindchange="bindEndDateChange">{{endDate}}</picker>
+      </view>
+      <view class="view-group">
+        <view class="view-label">支付方式：</view>
+        <picker class="view-value" name="paymentMethodIndex" value="{{paymentMethodIndex}}" range="{{paymentMethod}}" bindchange="bindPaymentMethodChange">
+            <view>{{paymentMethod[paymentMethodIndex]}}</view>
+          </picker>
+      </view>
+      <view class="view-group">
+        <view class="view-label">去向：</view>
+        <picker class="view-value" name="directionIndex" value="{{directionIndex}}" range="{{directionKeys}}" bindchange="bindDirectionChange">
+            <view>{{directionKeys[directionIndex]}}</view>
+          </picker>      
+      </view>
+    </form>
+  </view>
+  <view class="record-wrapper">
+    <view>
+      <view class="table-unit th th-order">序号</view>
+      <view class="table-unit th th-time">时间</view>
+      <view class="table-unit th th-method">支付方式</view>
+      <view class="table-unit th th-direction">去向</view> 
+      <view class="table-unit th th-money">金额(元)</view>     
+    </view>
+    <view class="record-table">
+      <view class="record-row" wx:for="{{selectedRecords}}" wx:key="{{index}}" style="background: {{index % 2 === 0 ? '#fff' : '#f7f7f7'}};">
+        <view class="table-unit td-order">{{index+1}}</view>
+        <view class="table-unit td-time">{{item.date}} {{item.time}}</view>
+        <view class="table-unit td-method">{{item.paymentMethod}}</view>
+        <view class="table-unit td-direction">{{item.directionFirst}}->{{item.directionSecond}}</view>
+        <view class="table-unit td-money">{{item.money}}</view>    
+      </view>
+    </view>
+    <view class="sum-money">总计：<text>{{sum}}</text>元</view>
+  </view>
+</view>

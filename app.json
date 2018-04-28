@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/check/check",
+    "pages/newDirection/newDirection",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "及时记账",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "记账",
+      "iconPath": "assets/write.png",
+      "selectedIconPath": "assets/write_fill.png"
+    }, {
+      "pagePath": "pages/check/check",
+      "text": "查账",
+      "iconPath":"assets/check.png",
+      "selectedIconPath": "assets/check_fill.png"
+    }],
+    "color":"#ccc",
+    "selectedColor": "#52b02f"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": true
+}

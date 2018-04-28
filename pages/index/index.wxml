@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">记一笔</view>
+  <form bindsubmit="bindSubmit">
+    <view class="view-group">
+      <view class="view-label">日期：</view>
+      <view class="view-value">
+        <picker name="date" mode="date" value="{{date}}" end="{{endDate}}" bindchange="bindDateChange">{{date}}</picker>
+        <!-- <picker name="time" mode="time" value="{{time}}" end="{{endTime}}" bindchange="bindTimeChange">{{time}}</picker> -->
+      </view>
+    </view>
+    <view class="view-group">
+      <view class="view-label">时间：</view>
+      <view class="view-value">
+        <!-- <picker name="date" mode="date" value="{{date}}" end="{{endDate}}" bindchange="bindDateChange">{{date}}</picker> -->
+        <picker name="time" mode="time" value="{{time}}" end="{{endTime}}" bindchange="bindTimeChange">{{time}}</picker>
+      </view>
+    </view>
+    <view class="view-group">
+      <view class="view-label">金额：</view>
+      <input class="view-value input money-input" name="money" type="digit" value="{{money}}" placeholder="0.00" bindinput="bindMoneyInput" bindblur="bindMoneyBlur" focus />
+       <view class="view-error" wx:if="{{errorMoney.show}}">{{errorMoney.msg}}</view> 
+    </view>
+    <view class="view-group">
+      <view class="view-label">支付方式：</view>
+      <view class="view-value" wx:if="{{!addPaymentMethod}}">
+        <picker name="paymentMethodIndex" value="{{paymentMethodIndex}}" range="{{paymentMethod}}" bindchange="bindPaymentMethodChange">
+          <view>{{paymentMethod[paymentMethodIndex]}}</view>
+        </picker>
+        <view class="operate" bindtap="addPaymentMethod">+</view>
+      </view>
+      <view class="view-value add-payment-method" wx:else>
+        <input class="input payment-method-input" placeholder="请输入支付方式" bindinput="bindPaymentMethodInput" />
+         <icon type="success" class="icon success-icon" bindtap="submitPaymentMethod" />        
+        <icon type="cancel" class="icon" bindtap="cancelAddPaymentMethod" />                 
+      </view>
+    </view>
+    <view class="view-group">
+      <view class="view-label">去向：</view>
+      <view class="view-value">
+        <picker name="directionIndex" mode="multiSelector" value="{{directionIndex}}" range="{{direction}}" bindchange="bindDirectionChange" bindcolumnchange="bindDirectionColumnChange">
+          <view>{{direction[0][directionIndex[0]]}}->{{direction[1][directionIndex[1]]}}</view>
+        </picker>
+        <view class="operate" bindtap="addDirection">+</view>
+      </view>
+    </view>
+    <view class="view-group">
+      <view class="view-label remark-label">备注：</view>
+      <textarea class="view-value remark-textarea" name="remark" value="{{remark}}"placeholder="请输入备注" />
+    </view>
+    <button class="submit-btn" type="primary" form-type="submit" disabled="{{money === '' || errorMoney.show}}">提交</button>
+  </form>
+</view>

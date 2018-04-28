@@ -1,0 +1,111 @@
+/**index.wxss**/
+.title{
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: limegreen;
+  font-size: 30px;
+  color: #fff;
+}
+.view-group{
+  margin: 0 15px 20px 15px; 
+  position: relative;
+  background-color: #fff;
+  border-radius: 3px;
+  /* padding: 5px 10px; */
+  font-size: 16px;
+}
+.view-label{
+  width: 30%;
+  height: 35px;
+  line-height: 35px;
+  box-sizing: border-box;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: #2eca2e;
+  color: #fff;
+  display: inline-block;
+  text-align: right;
+  vertical-align: middle; 
+}
+.view-value{
+  width: 70%;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;  
+  position: relative;
+}
+.view-error{
+  color: red;
+  font-size: 10px;
+  margin-left: 30%;
+  position: absolute;
+  left:0;
+  bottom:-15px;
+}
+.view-value picker{
+  display: inline-block;
+  margin-right: 10px;
+  /* vertical-align: middle; */
+}
+ .input {
+  height: 23px;
+  min-height: 23px;
+  line-height: 23px;
+  vertical-align: middle;
+} 
+.money-input{
+  color: red;
+  line-height: normal;
+}
+.operate{
+  font-size: 24px;
+  color:darkgrey;
+  /* float: right; */
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.add-payment-method{
+  height: 23px;
+  position: relative;
+}
+.icon{
+  vertical-align: middle;
+  /* margin-left: 10px; */
+  /* float: right; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+.success-icon{
+  right: 30px;
+}
+.payment-method-input{
+  /* width: 70%; */
+  /* display: inline-block; */
+  vertical-align: middle;   
+}
+.remark-label{
+  height: 50px;
+}
+.remark-textarea{
+  height: 50px;
+  /* padding-top: 5px; */
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+  vertical-align: top;
+  border-radius: 5px;
+  color: darkgrey;
+}

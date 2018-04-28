@@ -1,0 +1,13 @@
+/**app.wxss**/
+page{
+  height: 100%;
+  background: #f3f3f3
+}
+/* .container {
+  box-sizing: border-box;
+}  */
+.submit-btn{
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 3px;
+}
